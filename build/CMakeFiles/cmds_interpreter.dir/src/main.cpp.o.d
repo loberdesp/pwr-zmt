@@ -170,4 +170,6 @@ CMakeFiles/cmds_interpreter.dir/src/main.cpp.o: \
  /usr/include/c++/15/bits/parse_numbers.h \
  /usr/include/c++/15/bits/std_mutex.h \
  /usr/include/c++/15/bits/unique_lock.h \
- /home/piotrsiembab/Documents/pwr-zmt/inc/preprocessor.hh
+ /home/piotrsiembab/Documents/pwr-zmt/inc/preprocessor.hh \
+ /home/piotrsiembab/Documents/pwr-zmt/inc/LibInterface.hh \
+ /home/piotrsiembab/Documents/pwr-zmt/inc/AbstractInterp4Command.hh

@@ -3,6 +3,7 @@
 #include <cassert>
 #include "AbstractInterp4Command.hh"
 #include "preprocessor.hh"
+#include "LibInterface.hh"
 #include <string>
 
 using namespace std;

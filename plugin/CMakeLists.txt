@@ -5,7 +5,6 @@ project(${PROJ_NAME})
 
 include_directories(${PROJECT_SOURCE_DIR}/inc ${PROJECT_SOURCE_DIR}/../inc)
 add_library(Interp4Move MODULE src/Interp4Move.cpp)
-add_library(Interp4Set MODULE src/Interp4Set.cpp)
 add_custom_command(TARGET Interp4Move POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy libInterp4Move.so /tmp/bk_downloads
     COMMAND ${CMAKE_COMMAND} -E echo ""
@@ -13,6 +12,7 @@ add_custom_command(TARGET Interp4Move POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E echo ""    
   )
 
+  add_library(Interp4Set MODULE src/Interp4Set.cpp)
 add_custom_command(TARGET Interp4Set POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy libInterp4Set.so /tmp/bk_downloads
     COMMAND ${CMAKE_COMMAND} -E echo ""
