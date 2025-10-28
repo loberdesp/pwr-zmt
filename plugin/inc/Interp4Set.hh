@@ -1,5 +1,5 @@
-#ifndef  COMMAND4SET_HH
-#define  COMMAND4SET_HH
+#ifndef  COMMAND4MOVE_HH
+#define  COMMAND4MOVE_HH
 
 #ifndef __GNUG__
 # pragma interface
@@ -10,9 +10,9 @@
 
 /*!
  * \file
- * \brief Definicja klasy Interp4Set
+ * \brief Definicja klasy Interp4Move
  *
- * Plik zawiera definicję klasy Interp4Set ...
+ * Plik zawiera definicję klasy Interp4Move ...
  */
 
 /*!
@@ -20,7 +20,7 @@
  *
  *  Klasa modelująca polecenie ustawienia prędkości robota.
  */
-class Interp4Move: public AbstractInterp4Command {
+class Interp4Set: public AbstractInterp4Command {
   /*
    *  Tu należy zdefiniować pola, które są niezbędne
    *  do przechowywania wartości parametrów danego polecenia.
@@ -31,7 +31,7 @@ class Interp4Move: public AbstractInterp4Command {
   /*!
    * \brief
    */
-  Interp4Move();  
+  Interp4Set();  
   /*!
    * \brief Wyświetla postać bieżącego polecenia (nazwę oraz wartości parametrów)
    */
