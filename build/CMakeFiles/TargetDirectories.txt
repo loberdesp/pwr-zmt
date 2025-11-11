@@ -1,9 +1,0 @@
-/home/piotrsiembab/Documents/pwr-zmt/build/CMakeFiles/cmds_interpreter.dir
-/home/piotrsiembab/Documents/pwr-zmt/build/CMakeFiles/edit_cache.dir
-/home/piotrsiembab/Documents/pwr-zmt/build/CMakeFiles/rebuild_cache.dir
-/home/piotrsiembab/Documents/pwr-zmt/build/plugin/CMakeFiles/Interp4Move.dir
-/home/piotrsiembab/Documents/pwr-zmt/build/plugin/CMakeFiles/Interp4Set.dir
-/home/piotrsiembab/Documents/pwr-zmt/build/plugin/CMakeFiles/Interp4Rotate.dir
-/home/piotrsiembab/Documents/pwr-zmt/build/plugin/CMakeFiles/Interp4Pause.dir
-/home/piotrsiembab/Documents/pwr-zmt/build/plugin/CMakeFiles/edit_cache.dir
-/home/piotrsiembab/Documents/pwr-zmt/build/plugin/CMakeFiles/rebuild_cache.dir
