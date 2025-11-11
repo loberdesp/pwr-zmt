@@ -97,19 +97,115 @@ CMakeFiles/cmds_interpreter.dir/src/preprocessor.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/cmds_interpreter.dir/src/preprocessor.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/piotrsiembab/Documents/pwr-zmt/src/preprocessor.cpp -o CMakeFiles/cmds_interpreter.dir/src/preprocessor.cpp.s
 
+CMakeFiles/cmds_interpreter.dir/src/LibInterface.cpp.o: CMakeFiles/cmds_interpreter.dir/flags.make
+CMakeFiles/cmds_interpreter.dir/src/LibInterface.cpp.o: /home/piotrsiembab/Documents/pwr-zmt/src/LibInterface.cpp
+CMakeFiles/cmds_interpreter.dir/src/LibInterface.cpp.o: CMakeFiles/cmds_interpreter.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/piotrsiembab/Documents/pwr-zmt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/cmds_interpreter.dir/src/LibInterface.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cmds_interpreter.dir/src/LibInterface.cpp.o -MF CMakeFiles/cmds_interpreter.dir/src/LibInterface.cpp.o.d -o CMakeFiles/cmds_interpreter.dir/src/LibInterface.cpp.o -c /home/piotrsiembab/Documents/pwr-zmt/src/LibInterface.cpp
+
+CMakeFiles/cmds_interpreter.dir/src/LibInterface.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/cmds_interpreter.dir/src/LibInterface.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/piotrsiembab/Documents/pwr-zmt/src/LibInterface.cpp > CMakeFiles/cmds_interpreter.dir/src/LibInterface.cpp.i
+
+CMakeFiles/cmds_interpreter.dir/src/LibInterface.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/cmds_interpreter.dir/src/LibInterface.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/piotrsiembab/Documents/pwr-zmt/src/LibInterface.cpp -o CMakeFiles/cmds_interpreter.dir/src/LibInterface.cpp.s
+
+CMakeFiles/cmds_interpreter.dir/src/CommandRegistry.cpp.o: CMakeFiles/cmds_interpreter.dir/flags.make
+CMakeFiles/cmds_interpreter.dir/src/CommandRegistry.cpp.o: /home/piotrsiembab/Documents/pwr-zmt/src/CommandRegistry.cpp
+CMakeFiles/cmds_interpreter.dir/src/CommandRegistry.cpp.o: CMakeFiles/cmds_interpreter.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/piotrsiembab/Documents/pwr-zmt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/cmds_interpreter.dir/src/CommandRegistry.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cmds_interpreter.dir/src/CommandRegistry.cpp.o -MF CMakeFiles/cmds_interpreter.dir/src/CommandRegistry.cpp.o.d -o CMakeFiles/cmds_interpreter.dir/src/CommandRegistry.cpp.o -c /home/piotrsiembab/Documents/pwr-zmt/src/CommandRegistry.cpp
+
+CMakeFiles/cmds_interpreter.dir/src/CommandRegistry.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/cmds_interpreter.dir/src/CommandRegistry.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/piotrsiembab/Documents/pwr-zmt/src/CommandRegistry.cpp > CMakeFiles/cmds_interpreter.dir/src/CommandRegistry.cpp.i
+
+CMakeFiles/cmds_interpreter.dir/src/CommandRegistry.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/cmds_interpreter.dir/src/CommandRegistry.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/piotrsiembab/Documents/pwr-zmt/src/CommandRegistry.cpp -o CMakeFiles/cmds_interpreter.dir/src/CommandRegistry.cpp.s
+
+CMakeFiles/cmds_interpreter.dir/src/CommandParser.cpp.o: CMakeFiles/cmds_interpreter.dir/flags.make
+CMakeFiles/cmds_interpreter.dir/src/CommandParser.cpp.o: /home/piotrsiembab/Documents/pwr-zmt/src/CommandParser.cpp
+CMakeFiles/cmds_interpreter.dir/src/CommandParser.cpp.o: CMakeFiles/cmds_interpreter.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/piotrsiembab/Documents/pwr-zmt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/cmds_interpreter.dir/src/CommandParser.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cmds_interpreter.dir/src/CommandParser.cpp.o -MF CMakeFiles/cmds_interpreter.dir/src/CommandParser.cpp.o.d -o CMakeFiles/cmds_interpreter.dir/src/CommandParser.cpp.o -c /home/piotrsiembab/Documents/pwr-zmt/src/CommandParser.cpp
+
+CMakeFiles/cmds_interpreter.dir/src/CommandParser.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/cmds_interpreter.dir/src/CommandParser.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/piotrsiembab/Documents/pwr-zmt/src/CommandParser.cpp > CMakeFiles/cmds_interpreter.dir/src/CommandParser.cpp.i
+
+CMakeFiles/cmds_interpreter.dir/src/CommandParser.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/cmds_interpreter.dir/src/CommandParser.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/piotrsiembab/Documents/pwr-zmt/src/CommandParser.cpp -o CMakeFiles/cmds_interpreter.dir/src/CommandParser.cpp.s
+
+CMakeFiles/cmds_interpreter.dir/src/Configuration.cpp.o: CMakeFiles/cmds_interpreter.dir/flags.make
+CMakeFiles/cmds_interpreter.dir/src/Configuration.cpp.o: /home/piotrsiembab/Documents/pwr-zmt/src/Configuration.cpp
+CMakeFiles/cmds_interpreter.dir/src/Configuration.cpp.o: CMakeFiles/cmds_interpreter.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/piotrsiembab/Documents/pwr-zmt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/cmds_interpreter.dir/src/Configuration.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cmds_interpreter.dir/src/Configuration.cpp.o -MF CMakeFiles/cmds_interpreter.dir/src/Configuration.cpp.o.d -o CMakeFiles/cmds_interpreter.dir/src/Configuration.cpp.o -c /home/piotrsiembab/Documents/pwr-zmt/src/Configuration.cpp
+
+CMakeFiles/cmds_interpreter.dir/src/Configuration.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/cmds_interpreter.dir/src/Configuration.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/piotrsiembab/Documents/pwr-zmt/src/Configuration.cpp > CMakeFiles/cmds_interpreter.dir/src/Configuration.cpp.i
+
+CMakeFiles/cmds_interpreter.dir/src/Configuration.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/cmds_interpreter.dir/src/Configuration.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/piotrsiembab/Documents/pwr-zmt/src/Configuration.cpp -o CMakeFiles/cmds_interpreter.dir/src/Configuration.cpp.s
+
+CMakeFiles/cmds_interpreter.dir/src/xmlinterp.cpp.o: CMakeFiles/cmds_interpreter.dir/flags.make
+CMakeFiles/cmds_interpreter.dir/src/xmlinterp.cpp.o: /home/piotrsiembab/Documents/pwr-zmt/src/xmlinterp.cpp
+CMakeFiles/cmds_interpreter.dir/src/xmlinterp.cpp.o: CMakeFiles/cmds_interpreter.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/piotrsiembab/Documents/pwr-zmt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/cmds_interpreter.dir/src/xmlinterp.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cmds_interpreter.dir/src/xmlinterp.cpp.o -MF CMakeFiles/cmds_interpreter.dir/src/xmlinterp.cpp.o.d -o CMakeFiles/cmds_interpreter.dir/src/xmlinterp.cpp.o -c /home/piotrsiembab/Documents/pwr-zmt/src/xmlinterp.cpp
+
+CMakeFiles/cmds_interpreter.dir/src/xmlinterp.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/cmds_interpreter.dir/src/xmlinterp.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/piotrsiembab/Documents/pwr-zmt/src/xmlinterp.cpp > CMakeFiles/cmds_interpreter.dir/src/xmlinterp.cpp.i
+
+CMakeFiles/cmds_interpreter.dir/src/xmlinterp.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/cmds_interpreter.dir/src/xmlinterp.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/piotrsiembab/Documents/pwr-zmt/src/xmlinterp.cpp -o CMakeFiles/cmds_interpreter.dir/src/xmlinterp.cpp.s
+
+CMakeFiles/cmds_interpreter.dir/src/XMLReader.cpp.o: CMakeFiles/cmds_interpreter.dir/flags.make
+CMakeFiles/cmds_interpreter.dir/src/XMLReader.cpp.o: /home/piotrsiembab/Documents/pwr-zmt/src/XMLReader.cpp
+CMakeFiles/cmds_interpreter.dir/src/XMLReader.cpp.o: CMakeFiles/cmds_interpreter.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/piotrsiembab/Documents/pwr-zmt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/cmds_interpreter.dir/src/XMLReader.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cmds_interpreter.dir/src/XMLReader.cpp.o -MF CMakeFiles/cmds_interpreter.dir/src/XMLReader.cpp.o.d -o CMakeFiles/cmds_interpreter.dir/src/XMLReader.cpp.o -c /home/piotrsiembab/Documents/pwr-zmt/src/XMLReader.cpp
+
+CMakeFiles/cmds_interpreter.dir/src/XMLReader.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/cmds_interpreter.dir/src/XMLReader.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/piotrsiembab/Documents/pwr-zmt/src/XMLReader.cpp > CMakeFiles/cmds_interpreter.dir/src/XMLReader.cpp.i
+
+CMakeFiles/cmds_interpreter.dir/src/XMLReader.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/cmds_interpreter.dir/src/XMLReader.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/piotrsiembab/Documents/pwr-zmt/src/XMLReader.cpp -o CMakeFiles/cmds_interpreter.dir/src/XMLReader.cpp.s
+
 # Object files for target cmds_interpreter
 cmds_interpreter_OBJECTS = \
 "CMakeFiles/cmds_interpreter.dir/src/main.cpp.o" \
-"CMakeFiles/cmds_interpreter.dir/src/preprocessor.cpp.o"
+"CMakeFiles/cmds_interpreter.dir/src/preprocessor.cpp.o" \
+"CMakeFiles/cmds_interpreter.dir/src/LibInterface.cpp.o" \
+"CMakeFiles/cmds_interpreter.dir/src/CommandRegistry.cpp.o" \
+"CMakeFiles/cmds_interpreter.dir/src/CommandParser.cpp.o" \
+"CMakeFiles/cmds_interpreter.dir/src/Configuration.cpp.o" \
+"CMakeFiles/cmds_interpreter.dir/src/xmlinterp.cpp.o" \
+"CMakeFiles/cmds_interpreter.dir/src/XMLReader.cpp.o"
 
 # External object files for target cmds_interpreter
 cmds_interpreter_EXTERNAL_OBJECTS =
 
 cmds_interpreter: CMakeFiles/cmds_interpreter.dir/src/main.cpp.o
 cmds_interpreter: CMakeFiles/cmds_interpreter.dir/src/preprocessor.cpp.o
+cmds_interpreter: CMakeFiles/cmds_interpreter.dir/src/LibInterface.cpp.o
+cmds_interpreter: CMakeFiles/cmds_interpreter.dir/src/CommandRegistry.cpp.o
+cmds_interpreter: CMakeFiles/cmds_interpreter.dir/src/CommandParser.cpp.o
+cmds_interpreter: CMakeFiles/cmds_interpreter.dir/src/Configuration.cpp.o
+cmds_interpreter: CMakeFiles/cmds_interpreter.dir/src/xmlinterp.cpp.o
+cmds_interpreter: CMakeFiles/cmds_interpreter.dir/src/XMLReader.cpp.o
 cmds_interpreter: CMakeFiles/cmds_interpreter.dir/build.make
 cmds_interpreter: CMakeFiles/cmds_interpreter.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/piotrsiembab/Documents/pwr-zmt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable cmds_interpreter"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/piotrsiembab/Documents/pwr-zmt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable cmds_interpreter"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cmds_interpreter.dir/link.txt --verbose=$(VERBOSE)
 	/opt/st/stm32cubeclt_1.19.0/CMake/bin/cmake -E echo 
 	/opt/st/stm32cubeclt_1.19.0/CMake/bin/cmake -E echo \ Utworzony\ zostal\ program:\ \ cmds_interpreter

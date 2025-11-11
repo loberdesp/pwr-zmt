@@ -82,6 +82,8 @@ clean: plugin/clean
 # Recursive "all" directory target.
 plugin/all: plugin/CMakeFiles/Interp4Move.dir/all
 plugin/all: plugin/CMakeFiles/Interp4Set.dir/all
+plugin/all: plugin/CMakeFiles/Interp4Rotate.dir/all
+plugin/all: plugin/CMakeFiles/Interp4Pause.dir/all
 .PHONY : plugin/all
 
 # Recursive "preinstall" directory target.
@@ -91,6 +93,8 @@ plugin/preinstall:
 # Recursive "clean" directory target.
 plugin/clean: plugin/CMakeFiles/Interp4Move.dir/clean
 plugin/clean: plugin/CMakeFiles/Interp4Set.dir/clean
+plugin/clean: plugin/CMakeFiles/Interp4Rotate.dir/clean
+plugin/clean: plugin/CMakeFiles/Interp4Pause.dir/clean
 .PHONY : plugin/clean
 
 #=============================================================================
@@ -100,12 +104,12 @@ plugin/clean: plugin/CMakeFiles/Interp4Set.dir/clean
 CMakeFiles/cmds_interpreter.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cmds_interpreter.dir/build.make CMakeFiles/cmds_interpreter.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cmds_interpreter.dir/build.make CMakeFiles/cmds_interpreter.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/piotrsiembab/Documents/pwr-zmt/build/CMakeFiles --progress-num=5,6,7 "Built target cmds_interpreter"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/piotrsiembab/Documents/pwr-zmt/build/CMakeFiles --progress-num=9,10,11,12,13,14,15,16,17 "Built target cmds_interpreter"
 .PHONY : CMakeFiles/cmds_interpreter.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/cmds_interpreter.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/piotrsiembab/Documents/pwr-zmt/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/piotrsiembab/Documents/pwr-zmt/build/CMakeFiles 9
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/cmds_interpreter.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/piotrsiembab/Documents/pwr-zmt/build/CMakeFiles 0
 .PHONY : CMakeFiles/cmds_interpreter.dir/rule
@@ -152,7 +156,7 @@ plugin/CMakeFiles/Interp4Move.dir/clean:
 plugin/CMakeFiles/Interp4Set.dir/all:
 	$(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/Interp4Set.dir/build.make plugin/CMakeFiles/Interp4Set.dir/depend
 	$(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/Interp4Set.dir/build.make plugin/CMakeFiles/Interp4Set.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/piotrsiembab/Documents/pwr-zmt/build/CMakeFiles --progress-num=3,4 "Built target Interp4Set"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/piotrsiembab/Documents/pwr-zmt/build/CMakeFiles --progress-num=7,8 "Built target Interp4Set"
 .PHONY : plugin/CMakeFiles/Interp4Set.dir/all
 
 # Build rule for subdir invocation for target.
@@ -170,6 +174,58 @@ Interp4Set: plugin/CMakeFiles/Interp4Set.dir/rule
 plugin/CMakeFiles/Interp4Set.dir/clean:
 	$(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/Interp4Set.dir/build.make plugin/CMakeFiles/Interp4Set.dir/clean
 .PHONY : plugin/CMakeFiles/Interp4Set.dir/clean
+
+#=============================================================================
+# Target rules for target plugin/CMakeFiles/Interp4Rotate.dir
+
+# All Build rule for target.
+plugin/CMakeFiles/Interp4Rotate.dir/all:
+	$(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/Interp4Rotate.dir/build.make plugin/CMakeFiles/Interp4Rotate.dir/depend
+	$(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/Interp4Rotate.dir/build.make plugin/CMakeFiles/Interp4Rotate.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/piotrsiembab/Documents/pwr-zmt/build/CMakeFiles --progress-num=5,6 "Built target Interp4Rotate"
+.PHONY : plugin/CMakeFiles/Interp4Rotate.dir/all
+
+# Build rule for subdir invocation for target.
+plugin/CMakeFiles/Interp4Rotate.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/piotrsiembab/Documents/pwr-zmt/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 plugin/CMakeFiles/Interp4Rotate.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/piotrsiembab/Documents/pwr-zmt/build/CMakeFiles 0
+.PHONY : plugin/CMakeFiles/Interp4Rotate.dir/rule
+
+# Convenience name for target.
+Interp4Rotate: plugin/CMakeFiles/Interp4Rotate.dir/rule
+.PHONY : Interp4Rotate
+
+# clean rule for target.
+plugin/CMakeFiles/Interp4Rotate.dir/clean:
+	$(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/Interp4Rotate.dir/build.make plugin/CMakeFiles/Interp4Rotate.dir/clean
+.PHONY : plugin/CMakeFiles/Interp4Rotate.dir/clean
+
+#=============================================================================
+# Target rules for target plugin/CMakeFiles/Interp4Pause.dir
+
+# All Build rule for target.
+plugin/CMakeFiles/Interp4Pause.dir/all:
+	$(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/Interp4Pause.dir/build.make plugin/CMakeFiles/Interp4Pause.dir/depend
+	$(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/Interp4Pause.dir/build.make plugin/CMakeFiles/Interp4Pause.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/piotrsiembab/Documents/pwr-zmt/build/CMakeFiles --progress-num=3,4 "Built target Interp4Pause"
+.PHONY : plugin/CMakeFiles/Interp4Pause.dir/all
+
+# Build rule for subdir invocation for target.
+plugin/CMakeFiles/Interp4Pause.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/piotrsiembab/Documents/pwr-zmt/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 plugin/CMakeFiles/Interp4Pause.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/piotrsiembab/Documents/pwr-zmt/build/CMakeFiles 0
+.PHONY : plugin/CMakeFiles/Interp4Pause.dir/rule
+
+# Convenience name for target.
+Interp4Pause: plugin/CMakeFiles/Interp4Pause.dir/rule
+.PHONY : Interp4Pause
+
+# clean rule for target.
+plugin/CMakeFiles/Interp4Pause.dir/clean:
+	$(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/Interp4Pause.dir/build.make plugin/CMakeFiles/Interp4Pause.dir/clean
+.PHONY : plugin/CMakeFiles/Interp4Pause.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

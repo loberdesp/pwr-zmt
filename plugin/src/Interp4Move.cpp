@@ -4,6 +4,7 @@
 
 using std::cout;
 using std::endl;
+using std::cerr;
 
 
 extern "C" {
@@ -28,7 +29,7 @@ AbstractInterp4Command* CreateCmd(void)
 /*!
  *
  */
-Interp4Move::Interp4Move(): _Speed_mmS(0)
+Interp4Move::Interp4Move(): _Speed_mmS(0), _Distance_m(0)
 {}
 
 
@@ -40,7 +41,7 @@ void Interp4Move::PrintCmd() const
   /*
    *  Tu trzeba napisać odpowiednio zmodyfikować kod poniżej.
    */
-  cout << GetCmdName() << " " << _Speed_mmS  << " 10  2" << endl;
+  cout << GetCmdName() << " " << _Speed_mmS  << " " << _Distance_m << endl;
 }
 
 
@@ -74,8 +75,18 @@ bool Interp4Move::ExecCmd( AbstractScene      &rScn,
 bool Interp4Move::ReadParams(std::istream& Strm_CmdsList)
 {
   /*
-   *  Tu trzeba napisać odpowiedni kod.
+   *  Czyta parametry: Szybkosc[m/s]  DlugoscDrogi[m]
    */
+  double speed, distance;
+  
+  if (!(Strm_CmdsList >> speed >> distance)) {
+    cerr << "!!! Błąd: Niepoprawne parametry dla polecenia Move" << endl;
+    return false;
+  }
+  
+  _Speed_mmS = speed;
+  _Distance_m = distance;
+  
   return true;
 }
 

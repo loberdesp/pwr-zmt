@@ -24,9 +24,9 @@ class Interp4Set: public AbstractInterp4Command {
   /*
    *  Tu należy zdefiniować pola, które są niezbędne
    *  do przechowywania wartości parametrów danego polecenia.
-   *  Ponieżej zdefiniowane jest tylko jedno pole jako przykład.
    */
-  double  _Speed_mmS;
+  double  _PosX, _PosY, _PosZ;      // Pozycja [m]
+  double  _AngRoll, _AngPitch, _AngYaw;  // Orientacja [deg]
  public:
   /*!
    * \brief

@@ -4,6 +4,7 @@
 
 using std::cout;
 using std::endl;
+using std::cerr;
 
 
 extern "C" {
@@ -28,7 +29,8 @@ AbstractInterp4Command* CreateCmd(void)
 /*!
  *
  */
-Interp4Set::Interp4Set(): _Speed_mmS(0)
+Interp4Set::Interp4Set(): _PosX(0), _PosY(0), _PosZ(0), 
+                          _AngRoll(0), _AngPitch(0), _AngYaw(0)
 {}
 
 
@@ -37,10 +39,8 @@ Interp4Set::Interp4Set(): _Speed_mmS(0)
  */
 void Interp4Set::PrintCmd() const
 {
-  /*
-   *  Tu trzeba napisać odpowiednio zmodyfikować kod poniżej.
-   */
-  cout << GetCmdName() << " " << _Speed_mmS  << " 10  2" << endl;
+  cout << GetCmdName() << " " << _PosX << " " << _PosY << " " << _PosZ 
+       << " " << _AngRoll << " " << _AngPitch << " " << _AngYaw << endl;
 }
 
 
@@ -74,8 +74,14 @@ bool Interp4Set::ExecCmd( AbstractScene      &rScn,
 bool Interp4Set::ReadParams(std::istream& Strm_CmdsList)
 {
   /*
-   *  Tu trzeba napisać odpowiedni kod.
+   *  Czyta parametry: X Y Z Roll Pitch Yaw
    */
+  if (!(Strm_CmdsList >> _PosX >> _PosY >> _PosZ 
+                      >> _AngRoll >> _AngPitch >> _AngYaw)) {
+    cerr << "!!! Błąd: Niepoprawne parametry dla polecenia Set" << endl;
+    return false;
+  }
+  
   return true;
 }
 
@@ -94,5 +100,5 @@ AbstractInterp4Command* Interp4Set::CreateCmd()
  */
 void Interp4Set::PrintSyntax() const
 {
-  cout << "   Set  NazwaObiektu  Szybkosc[m/s]  DlugoscDrogi[m]" << endl;
+  cout << "   Set  NazwaObiektu  X[m] Y[m] Z[m]  Roll[deg] Pitch[deg] Yaw[deg]" << endl;
 }

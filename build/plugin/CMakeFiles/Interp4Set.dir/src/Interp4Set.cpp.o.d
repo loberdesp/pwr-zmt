@@ -160,7 +160,8 @@ plugin/CMakeFiles/Interp4Set.dir/src/Interp4Set.cpp.o: \
  /usr/include/c++/15/tr1/poly_hermite.tcc \
  /usr/include/c++/15/tr1/poly_laguerre.tcc \
  /usr/include/c++/15/tr1/riemann_zeta.tcc /usr/include/c++/15/cassert \
- /usr/include/assert.h \
+ /usr/include/assert.h /usr/include/c++/15/sstream \
+ /usr/include/c++/15/bits/sstream.tcc \
  /home/piotrsiembab/Documents/pwr-zmt/plugin/../inc/AbstractComChannel.hh \
  /usr/include/c++/15/mutex /usr/include/c++/15/bits/chrono.h \
  /usr/include/c++/15/ratio /usr/include/c++/15/cstdint \

@@ -1,21 +1,37 @@
 #include <iostream>
-#include <dlfcn.h>
 #include <cassert>
 #include "AbstractInterp4Command.hh"
 #include "preprocessor.hh"
-#include "LibInterface.hh"
+#include "CommandRegistry.hh"
+#include "CommandParser.hh"
+#include "Configuration.hh"
+#include "XMLReader.hh"
 #include <string>
 
 using namespace std;
 
-#define PLUGIN_NAME__move "libInterp4Move.so"
-#define PLUGIN_NAME__set "libInterp4Set.so"
-
 
 int main(int argc, char *argv[])
 {
+  cout << "\n=====================================" << endl;
+  cout << "  Interpreter Poleceń - Etap 2" << endl;
+  cout << "=====================================" << endl;
 
-  //////////////////////////// preprocessor test ////////////////////////////
+  ///////////////// Wczytywanie konfiguracji XML /////////////////
+  
+  Configuration config;
+  
+  cout << "\n--- Wczytywanie konfiguracji XML ---" << endl;
+  if (!ReadXMLConfiguration("config/config.xml", config)) {
+      cerr << "!!! Błąd wczytywania konfiguracji XML" << endl;
+      return 1;
+  }
+  
+  // Wyświetl wczytaną konfigurację
+  config.Print();
+
+
+  //////////////////////////// Preprocessor test ////////////////////////////
   if (argc < 2) {
       cerr << "Usage: " << argv[0] << " <filename>" << endl;
       return 1;
@@ -27,78 +43,63 @@ int main(int argc, char *argv[])
       cerr << "Failed to read file: " << filename << endl;
       return 1;
   }
-  std::cout << "File Content:\n" << fileContent << std::endl;
+  cout << "\n--- Zawartość pliku po preprocessingu ---" << endl;
+  cout << fileContent << endl;
+  cout << "----------------------------------------\n" << endl;
 
 
-
-////////////////////////////// move plugin test ////////////////////////////
-
+  ///////////////// Rejestracja wtyczek z konfiguracji XML /////////////////
   
-  void *pLibHnd_Move = dlopen(PLUGIN_NAME__move,RTLD_LAZY);
-  AbstractInterp4Command *(*pCreateCmd_Move)(void);
-  void *pFun;
-
-  if (!pLibHnd_Move) {
-    cerr << "!!! Brak biblioteki: " PLUGIN_NAME__move << endl;
-    return 1;
-  }
-
-
-  pFun = dlsym(pLibHnd_Move,"CreateCmd");
-  if (!pFun) {
-    cerr << "!!! Nie znaleziono funkcji CreateCmd" << endl;
-    return 1;
-  }
-  pCreateCmd_Move = reinterpret_cast<AbstractInterp4Command* (*)(void)>(pFun);
-
-
-  AbstractInterp4Command *pCmd = pCreateCmd_Move();
-
-  cout << endl;
-  cout << pCmd->GetCmdName() << endl;
-  cout << endl;
-  pCmd->PrintSyntax();
-  cout << endl;
-  pCmd->PrintCmd();
-  cout << endl;
+  cout << "\n--- Ładowanie wtyczek z konfiguracji XML ---" << endl;
   
-  delete pCmd;
-
-  dlclose(pLibHnd_Move);
-
-
-////////////////////////////// set plugin test ////////////////////////////
-
-
-  void *pLibHnd_Set = dlopen(PLUGIN_NAME__set,RTLD_LAZY);
-  AbstractInterp4Command *(*pCreateCmd_Set)(void);
-  void *pFun_set;
-
-  if (!pLibHnd_Set) {
-    cerr << "!!! Brak biblioteki: " PLUGIN_NAME__set << endl;
-    return 1;
-  }
-
-
-  pFun_set = dlsym(pLibHnd_Set,"CreateCmd");
-  if (!pFun_set) {
-    cerr << "!!! Nie znaleziono funkcji CreateCmd" << endl;
-    return 1;
-  }
-  pCreateCmd_Set = reinterpret_cast<AbstractInterp4Command* (*)(void)>(pFun_set);
-
-
-  AbstractInterp4Command *pCmd_Set = pCreateCmd_Set();
-
-  cout << endl;
-  cout << pCmd_Set->GetCmdName() << endl;
-  cout << endl;
-  pCmd_Set->PrintSyntax();
-  cout << endl;
-  pCmd_Set->PrintCmd();
-  cout << endl;
+  CommandRegistry cmdRegistry;
   
-  delete pCmd_Set;
+  // Rejestracja wtyczek z pliku XML
+  for (const auto& libName : config.GetPluginLibraries()) {
+      string libPath = "./plugin/" + libName;
+      cmdRegistry.RegisterCmd(libPath.c_str());
+  }
+  
+  // Wyświetlenie zarejestrowanych poleceń
+  cmdRegistry.PrintRegisteredCommands();
 
-  dlclose(pLibHnd_Set);
+
+  ///////////////// Test rejestru poleceń /////////////////
+  
+  cout << "\n--- Test rejestru poleceń ---" << endl;
+  
+  // Lista poleceń do przetestowania
+  string testCommands[] = {"Move", "Set", "Rotate", "Pause"};
+  
+  for (const string& cmdName : testCommands) {
+      cout << "\n[TEST] Polecenie: " << cmdName << endl;
+      
+      AbstractInterp4Command* pCmd = cmdRegistry.CreateCmd(cmdName);
+      
+      if (pCmd) {
+          cout << "  Nazwa: " << pCmd->GetCmdName() << endl;
+          cout << "  Składnia: ";
+          pCmd->PrintSyntax();
+          
+          delete pCmd;
+      } else {
+          cerr << "  !!! Błąd tworzenia polecenia" << endl;
+      }
+  }
+
+
+  ///////////////// Parsowanie i wykonywanie poleceń z pliku /////////////////
+  
+  CommandParser parser(cmdRegistry);
+  
+  if (!parser.ParseAndExecute(fileContent)) {
+      cerr << "\n!!! Wystąpiły błędy podczas parsowania pliku" << endl;
+      return 1;
+  }
+  
+  cout << "\n=====================================" << endl;
+  cout << "  Program zakończony pomyślnie!" << endl;
+  cout << "=====================================" << endl;
+
+  return 0;
 }

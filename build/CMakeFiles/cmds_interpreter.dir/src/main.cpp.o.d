@@ -134,9 +134,8 @@ CMakeFiles/cmds_interpreter.dir/src/main.cpp.o: \
  /usr/include/c++/15/bits/locale_facets.tcc \
  /usr/include/c++/15/bits/basic_ios.tcc \
  /usr/include/c++/15/bits/ostream.tcc /usr/include/c++/15/istream \
- /usr/include/c++/15/bits/istream.tcc /usr/include/dlfcn.h \
- /usr/include/bits/dlfcn.h /usr/include/bits/dl_find_object.h \
- /usr/include/c++/15/cassert /usr/include/assert.h \
+ /usr/include/c++/15/bits/istream.tcc /usr/include/c++/15/cassert \
+ /usr/include/assert.h \
  /home/piotrsiembab/Documents/pwr-zmt/inc/AbstractInterp4Command.hh \
  /home/piotrsiembab/Documents/pwr-zmt/inc/AbstractScene.hh \
  /home/piotrsiembab/Documents/pwr-zmt/inc/AbstractMobileObj.hh \
@@ -160,7 +159,8 @@ CMakeFiles/cmds_interpreter.dir/src/main.cpp.o: \
  /usr/include/c++/15/tr1/modified_bessel_func.tcc \
  /usr/include/c++/15/tr1/poly_hermite.tcc \
  /usr/include/c++/15/tr1/poly_laguerre.tcc \
- /usr/include/c++/15/tr1/riemann_zeta.tcc \
+ /usr/include/c++/15/tr1/riemann_zeta.tcc /usr/include/c++/15/sstream \
+ /usr/include/c++/15/bits/sstream.tcc \
  /home/piotrsiembab/Documents/pwr-zmt/inc/AbstractComChannel.hh \
  /usr/include/c++/15/mutex /usr/include/c++/15/bits/chrono.h \
  /usr/include/c++/15/ratio /usr/include/c++/15/cstdint \
@@ -171,5 +171,36 @@ CMakeFiles/cmds_interpreter.dir/src/main.cpp.o: \
  /usr/include/c++/15/bits/std_mutex.h \
  /usr/include/c++/15/bits/unique_lock.h \
  /home/piotrsiembab/Documents/pwr-zmt/inc/preprocessor.hh \
+ /home/piotrsiembab/Documents/pwr-zmt/inc/CommandRegistry.hh \
  /home/piotrsiembab/Documents/pwr-zmt/inc/LibInterface.hh \
- /home/piotrsiembab/Documents/pwr-zmt/inc/AbstractInterp4Command.hh
+ /home/piotrsiembab/Documents/pwr-zmt/inc/AbstractInterp4Command.hh \
+ /usr/include/dlfcn.h /usr/include/bits/dlfcn.h \
+ /usr/include/bits/dl_find_object.h /usr/include/c++/15/map \
+ /usr/include/c++/15/bits/stl_tree.h \
+ /usr/include/c++/15/ext/aligned_buffer.h \
+ /usr/include/c++/15/bits/node_handle.h \
+ /usr/include/c++/15/bits/stl_map.h \
+ /usr/include/c++/15/bits/stl_multimap.h \
+ /usr/include/c++/15/bits/erase_if.h /usr/include/c++/15/memory \
+ /usr/include/c++/15/bits/stl_tempbuf.h \
+ /usr/include/c++/15/bits/stl_uninitialized.h \
+ /usr/include/c++/15/bits/stl_raw_storage_iter.h \
+ /usr/include/c++/15/bits/align.h /usr/include/c++/15/bits/unique_ptr.h \
+ /usr/include/c++/15/bits/shared_ptr.h \
+ /usr/include/c++/15/bits/shared_ptr_base.h \
+ /usr/include/c++/15/bits/allocated_ptr.h \
+ /usr/include/c++/15/ext/concurrence.h \
+ /usr/include/c++/15/bits/shared_ptr_atomic.h \
+ /usr/include/c++/15/bits/atomic_base.h \
+ /usr/include/c++/15/bits/atomic_lockfree_defines.h \
+ /usr/include/c++/15/backward/auto_ptr.h \
+ /usr/include/c++/15/pstl/glue_memory_defs.h \
+ /usr/include/c++/15/pstl/execution_defs.h \
+ /home/piotrsiembab/Documents/pwr-zmt/inc/CommandParser.hh \
+ /home/piotrsiembab/Documents/pwr-zmt/inc/CommandRegistry.hh \
+ /home/piotrsiembab/Documents/pwr-zmt/inc/Configuration.hh \
+ /usr/include/c++/15/vector /usr/include/c++/15/bits/stl_vector.h \
+ /usr/include/c++/15/bits/stl_bvector.h \
+ /usr/include/c++/15/bits/vector.tcc \
+ /home/piotrsiembab/Documents/pwr-zmt/inc/XMLReader.hh \
+ /home/piotrsiembab/Documents/pwr-zmt/inc/Configuration.hh

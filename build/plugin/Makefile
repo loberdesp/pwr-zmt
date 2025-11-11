@@ -144,6 +144,34 @@ Interp4Set/fast:
 	cd /home/piotrsiembab/Documents/pwr-zmt/build && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/Interp4Set.dir/build.make plugin/CMakeFiles/Interp4Set.dir/build
 .PHONY : Interp4Set/fast
 
+# Convenience name for target.
+plugin/CMakeFiles/Interp4Rotate.dir/rule:
+	cd /home/piotrsiembab/Documents/pwr-zmt/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 plugin/CMakeFiles/Interp4Rotate.dir/rule
+.PHONY : plugin/CMakeFiles/Interp4Rotate.dir/rule
+
+# Convenience name for target.
+Interp4Rotate: plugin/CMakeFiles/Interp4Rotate.dir/rule
+.PHONY : Interp4Rotate
+
+# fast build rule for target.
+Interp4Rotate/fast:
+	cd /home/piotrsiembab/Documents/pwr-zmt/build && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/Interp4Rotate.dir/build.make plugin/CMakeFiles/Interp4Rotate.dir/build
+.PHONY : Interp4Rotate/fast
+
+# Convenience name for target.
+plugin/CMakeFiles/Interp4Pause.dir/rule:
+	cd /home/piotrsiembab/Documents/pwr-zmt/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 plugin/CMakeFiles/Interp4Pause.dir/rule
+.PHONY : plugin/CMakeFiles/Interp4Pause.dir/rule
+
+# Convenience name for target.
+Interp4Pause: plugin/CMakeFiles/Interp4Pause.dir/rule
+.PHONY : Interp4Pause
+
+# fast build rule for target.
+Interp4Pause/fast:
+	cd /home/piotrsiembab/Documents/pwr-zmt/build && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/Interp4Pause.dir/build.make plugin/CMakeFiles/Interp4Pause.dir/build
+.PHONY : Interp4Pause/fast
+
 src/Interp4Move.o: src/Interp4Move.cpp.o
 .PHONY : src/Interp4Move.o
 
@@ -167,6 +195,54 @@ src/Interp4Move.s: src/Interp4Move.cpp.s
 src/Interp4Move.cpp.s:
 	cd /home/piotrsiembab/Documents/pwr-zmt/build && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/Interp4Move.dir/build.make plugin/CMakeFiles/Interp4Move.dir/src/Interp4Move.cpp.s
 .PHONY : src/Interp4Move.cpp.s
+
+src/Interp4Pause.o: src/Interp4Pause.cpp.o
+.PHONY : src/Interp4Pause.o
+
+# target to build an object file
+src/Interp4Pause.cpp.o:
+	cd /home/piotrsiembab/Documents/pwr-zmt/build && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/Interp4Pause.dir/build.make plugin/CMakeFiles/Interp4Pause.dir/src/Interp4Pause.cpp.o
+.PHONY : src/Interp4Pause.cpp.o
+
+src/Interp4Pause.i: src/Interp4Pause.cpp.i
+.PHONY : src/Interp4Pause.i
+
+# target to preprocess a source file
+src/Interp4Pause.cpp.i:
+	cd /home/piotrsiembab/Documents/pwr-zmt/build && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/Interp4Pause.dir/build.make plugin/CMakeFiles/Interp4Pause.dir/src/Interp4Pause.cpp.i
+.PHONY : src/Interp4Pause.cpp.i
+
+src/Interp4Pause.s: src/Interp4Pause.cpp.s
+.PHONY : src/Interp4Pause.s
+
+# target to generate assembly for a file
+src/Interp4Pause.cpp.s:
+	cd /home/piotrsiembab/Documents/pwr-zmt/build && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/Interp4Pause.dir/build.make plugin/CMakeFiles/Interp4Pause.dir/src/Interp4Pause.cpp.s
+.PHONY : src/Interp4Pause.cpp.s
+
+src/Interp4Rotate.o: src/Interp4Rotate.cpp.o
+.PHONY : src/Interp4Rotate.o
+
+# target to build an object file
+src/Interp4Rotate.cpp.o:
+	cd /home/piotrsiembab/Documents/pwr-zmt/build && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/Interp4Rotate.dir/build.make plugin/CMakeFiles/Interp4Rotate.dir/src/Interp4Rotate.cpp.o
+.PHONY : src/Interp4Rotate.cpp.o
+
+src/Interp4Rotate.i: src/Interp4Rotate.cpp.i
+.PHONY : src/Interp4Rotate.i
+
+# target to preprocess a source file
+src/Interp4Rotate.cpp.i:
+	cd /home/piotrsiembab/Documents/pwr-zmt/build && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/Interp4Rotate.dir/build.make plugin/CMakeFiles/Interp4Rotate.dir/src/Interp4Rotate.cpp.i
+.PHONY : src/Interp4Rotate.cpp.i
+
+src/Interp4Rotate.s: src/Interp4Rotate.cpp.s
+.PHONY : src/Interp4Rotate.s
+
+# target to generate assembly for a file
+src/Interp4Rotate.cpp.s:
+	cd /home/piotrsiembab/Documents/pwr-zmt/build && $(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/Interp4Rotate.dir/build.make plugin/CMakeFiles/Interp4Rotate.dir/src/Interp4Rotate.cpp.s
+.PHONY : src/Interp4Rotate.cpp.s
 
 src/Interp4Set.o: src/Interp4Set.cpp.o
 .PHONY : src/Interp4Set.o
@@ -201,10 +277,18 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Interp4Move"
+	@echo "... Interp4Pause"
+	@echo "... Interp4Rotate"
 	@echo "... Interp4Set"
 	@echo "... src/Interp4Move.o"
 	@echo "... src/Interp4Move.i"
 	@echo "... src/Interp4Move.s"
+	@echo "... src/Interp4Pause.o"
+	@echo "... src/Interp4Pause.i"
+	@echo "... src/Interp4Pause.s"
+	@echo "... src/Interp4Rotate.o"
+	@echo "... src/Interp4Rotate.i"
+	@echo "... src/Interp4Rotate.s"
 	@echo "... src/Interp4Set.o"
 	@echo "... src/Interp4Set.i"
 	@echo "... src/Interp4Set.s"

@@ -15,7 +15,7 @@ inline std::string& ltrim(std::string& s) {
     }));
     return s;
 }
-
+    
 // Usuwa białe znaki z końca stringa
 inline std::string& rtrim(std::string& s) {
     s.erase(std::find_if(s.rbegin(), s.rend(), [](unsigned char ch) {
@@ -91,11 +91,9 @@ std::string readFileAndPreprocess(const char* filename) {
                 // Zapisz makro
                 macros[key] = value;
             }
-            // Nie dodawaj linii z #define do wynikowego stringa
             continue;
         }
 
-        // Zastosuj zamianę makr
         // Iteruj przez wszystkie zapisane makra
         for (const auto& pair : macros) {
             const std::string& key = pair.first;

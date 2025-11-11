@@ -155,6 +155,152 @@ Interp4Set/fast:
 	$(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/Interp4Set.dir/build.make plugin/CMakeFiles/Interp4Set.dir/build
 .PHONY : Interp4Set/fast
 
+#=============================================================================
+# Target rules for targets named Interp4Rotate
+
+# Build rule for target.
+Interp4Rotate: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Interp4Rotate
+.PHONY : Interp4Rotate
+
+# fast build rule for target.
+Interp4Rotate/fast:
+	$(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/Interp4Rotate.dir/build.make plugin/CMakeFiles/Interp4Rotate.dir/build
+.PHONY : Interp4Rotate/fast
+
+#=============================================================================
+# Target rules for targets named Interp4Pause
+
+# Build rule for target.
+Interp4Pause: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Interp4Pause
+.PHONY : Interp4Pause
+
+# fast build rule for target.
+Interp4Pause/fast:
+	$(MAKE) $(MAKESILENT) -f plugin/CMakeFiles/Interp4Pause.dir/build.make plugin/CMakeFiles/Interp4Pause.dir/build
+.PHONY : Interp4Pause/fast
+
+src/CommandParser.o: src/CommandParser.cpp.o
+.PHONY : src/CommandParser.o
+
+# target to build an object file
+src/CommandParser.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cmds_interpreter.dir/build.make CMakeFiles/cmds_interpreter.dir/src/CommandParser.cpp.o
+.PHONY : src/CommandParser.cpp.o
+
+src/CommandParser.i: src/CommandParser.cpp.i
+.PHONY : src/CommandParser.i
+
+# target to preprocess a source file
+src/CommandParser.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cmds_interpreter.dir/build.make CMakeFiles/cmds_interpreter.dir/src/CommandParser.cpp.i
+.PHONY : src/CommandParser.cpp.i
+
+src/CommandParser.s: src/CommandParser.cpp.s
+.PHONY : src/CommandParser.s
+
+# target to generate assembly for a file
+src/CommandParser.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cmds_interpreter.dir/build.make CMakeFiles/cmds_interpreter.dir/src/CommandParser.cpp.s
+.PHONY : src/CommandParser.cpp.s
+
+src/CommandRegistry.o: src/CommandRegistry.cpp.o
+.PHONY : src/CommandRegistry.o
+
+# target to build an object file
+src/CommandRegistry.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cmds_interpreter.dir/build.make CMakeFiles/cmds_interpreter.dir/src/CommandRegistry.cpp.o
+.PHONY : src/CommandRegistry.cpp.o
+
+src/CommandRegistry.i: src/CommandRegistry.cpp.i
+.PHONY : src/CommandRegistry.i
+
+# target to preprocess a source file
+src/CommandRegistry.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cmds_interpreter.dir/build.make CMakeFiles/cmds_interpreter.dir/src/CommandRegistry.cpp.i
+.PHONY : src/CommandRegistry.cpp.i
+
+src/CommandRegistry.s: src/CommandRegistry.cpp.s
+.PHONY : src/CommandRegistry.s
+
+# target to generate assembly for a file
+src/CommandRegistry.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cmds_interpreter.dir/build.make CMakeFiles/cmds_interpreter.dir/src/CommandRegistry.cpp.s
+.PHONY : src/CommandRegistry.cpp.s
+
+src/Configuration.o: src/Configuration.cpp.o
+.PHONY : src/Configuration.o
+
+# target to build an object file
+src/Configuration.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cmds_interpreter.dir/build.make CMakeFiles/cmds_interpreter.dir/src/Configuration.cpp.o
+.PHONY : src/Configuration.cpp.o
+
+src/Configuration.i: src/Configuration.cpp.i
+.PHONY : src/Configuration.i
+
+# target to preprocess a source file
+src/Configuration.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cmds_interpreter.dir/build.make CMakeFiles/cmds_interpreter.dir/src/Configuration.cpp.i
+.PHONY : src/Configuration.cpp.i
+
+src/Configuration.s: src/Configuration.cpp.s
+.PHONY : src/Configuration.s
+
+# target to generate assembly for a file
+src/Configuration.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cmds_interpreter.dir/build.make CMakeFiles/cmds_interpreter.dir/src/Configuration.cpp.s
+.PHONY : src/Configuration.cpp.s
+
+src/LibInterface.o: src/LibInterface.cpp.o
+.PHONY : src/LibInterface.o
+
+# target to build an object file
+src/LibInterface.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cmds_interpreter.dir/build.make CMakeFiles/cmds_interpreter.dir/src/LibInterface.cpp.o
+.PHONY : src/LibInterface.cpp.o
+
+src/LibInterface.i: src/LibInterface.cpp.i
+.PHONY : src/LibInterface.i
+
+# target to preprocess a source file
+src/LibInterface.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cmds_interpreter.dir/build.make CMakeFiles/cmds_interpreter.dir/src/LibInterface.cpp.i
+.PHONY : src/LibInterface.cpp.i
+
+src/LibInterface.s: src/LibInterface.cpp.s
+.PHONY : src/LibInterface.s
+
+# target to generate assembly for a file
+src/LibInterface.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cmds_interpreter.dir/build.make CMakeFiles/cmds_interpreter.dir/src/LibInterface.cpp.s
+.PHONY : src/LibInterface.cpp.s
+
+src/XMLReader.o: src/XMLReader.cpp.o
+.PHONY : src/XMLReader.o
+
+# target to build an object file
+src/XMLReader.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cmds_interpreter.dir/build.make CMakeFiles/cmds_interpreter.dir/src/XMLReader.cpp.o
+.PHONY : src/XMLReader.cpp.o
+
+src/XMLReader.i: src/XMLReader.cpp.i
+.PHONY : src/XMLReader.i
+
+# target to preprocess a source file
+src/XMLReader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cmds_interpreter.dir/build.make CMakeFiles/cmds_interpreter.dir/src/XMLReader.cpp.i
+.PHONY : src/XMLReader.cpp.i
+
+src/XMLReader.s: src/XMLReader.cpp.s
+.PHONY : src/XMLReader.s
+
+# target to generate assembly for a file
+src/XMLReader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cmds_interpreter.dir/build.make CMakeFiles/cmds_interpreter.dir/src/XMLReader.cpp.s
+.PHONY : src/XMLReader.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -203,6 +349,30 @@ src/preprocessor.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cmds_interpreter.dir/build.make CMakeFiles/cmds_interpreter.dir/src/preprocessor.cpp.s
 .PHONY : src/preprocessor.cpp.s
 
+src/xmlinterp.o: src/xmlinterp.cpp.o
+.PHONY : src/xmlinterp.o
+
+# target to build an object file
+src/xmlinterp.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cmds_interpreter.dir/build.make CMakeFiles/cmds_interpreter.dir/src/xmlinterp.cpp.o
+.PHONY : src/xmlinterp.cpp.o
+
+src/xmlinterp.i: src/xmlinterp.cpp.i
+.PHONY : src/xmlinterp.i
+
+# target to preprocess a source file
+src/xmlinterp.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cmds_interpreter.dir/build.make CMakeFiles/cmds_interpreter.dir/src/xmlinterp.cpp.i
+.PHONY : src/xmlinterp.cpp.i
+
+src/xmlinterp.s: src/xmlinterp.cpp.s
+.PHONY : src/xmlinterp.s
+
+# target to generate assembly for a file
+src/xmlinterp.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cmds_interpreter.dir/build.make CMakeFiles/cmds_interpreter.dir/src/xmlinterp.cpp.s
+.PHONY : src/xmlinterp.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -212,14 +382,34 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Interp4Move"
+	@echo "... Interp4Pause"
+	@echo "... Interp4Rotate"
 	@echo "... Interp4Set"
 	@echo "... cmds_interpreter"
+	@echo "... src/CommandParser.o"
+	@echo "... src/CommandParser.i"
+	@echo "... src/CommandParser.s"
+	@echo "... src/CommandRegistry.o"
+	@echo "... src/CommandRegistry.i"
+	@echo "... src/CommandRegistry.s"
+	@echo "... src/Configuration.o"
+	@echo "... src/Configuration.i"
+	@echo "... src/Configuration.s"
+	@echo "... src/LibInterface.o"
+	@echo "... src/LibInterface.i"
+	@echo "... src/LibInterface.s"
+	@echo "... src/XMLReader.o"
+	@echo "... src/XMLReader.i"
+	@echo "... src/XMLReader.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
 	@echo "... src/preprocessor.o"
 	@echo "... src/preprocessor.i"
 	@echo "... src/preprocessor.s"
+	@echo "... src/xmlinterp.o"
+	@echo "... src/xmlinterp.i"
+	@echo "... src/xmlinterp.s"
 .PHONY : help
 
 

@@ -8,8 +8,14 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/piotrsiembab/Documents/pwr-zmt/src/CommandParser.cpp" "CMakeFiles/cmds_interpreter.dir/src/CommandParser.cpp.o" "gcc" "CMakeFiles/cmds_interpreter.dir/src/CommandParser.cpp.o.d"
+  "/home/piotrsiembab/Documents/pwr-zmt/src/CommandRegistry.cpp" "CMakeFiles/cmds_interpreter.dir/src/CommandRegistry.cpp.o" "gcc" "CMakeFiles/cmds_interpreter.dir/src/CommandRegistry.cpp.o.d"
+  "/home/piotrsiembab/Documents/pwr-zmt/src/Configuration.cpp" "CMakeFiles/cmds_interpreter.dir/src/Configuration.cpp.o" "gcc" "CMakeFiles/cmds_interpreter.dir/src/Configuration.cpp.o.d"
+  "/home/piotrsiembab/Documents/pwr-zmt/src/LibInterface.cpp" "CMakeFiles/cmds_interpreter.dir/src/LibInterface.cpp.o" "gcc" "CMakeFiles/cmds_interpreter.dir/src/LibInterface.cpp.o.d"
+  "/home/piotrsiembab/Documents/pwr-zmt/src/XMLReader.cpp" "CMakeFiles/cmds_interpreter.dir/src/XMLReader.cpp.o" "gcc" "CMakeFiles/cmds_interpreter.dir/src/XMLReader.cpp.o.d"
   "/home/piotrsiembab/Documents/pwr-zmt/src/main.cpp" "CMakeFiles/cmds_interpreter.dir/src/main.cpp.o" "gcc" "CMakeFiles/cmds_interpreter.dir/src/main.cpp.o.d"
   "/home/piotrsiembab/Documents/pwr-zmt/src/preprocessor.cpp" "CMakeFiles/cmds_interpreter.dir/src/preprocessor.cpp.o" "gcc" "CMakeFiles/cmds_interpreter.dir/src/preprocessor.cpp.o.d"
+  "/home/piotrsiembab/Documents/pwr-zmt/src/xmlinterp.cpp" "CMakeFiles/cmds_interpreter.dir/src/xmlinterp.cpp.o" "gcc" "CMakeFiles/cmds_interpreter.dir/src/xmlinterp.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.
