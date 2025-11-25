@@ -1,5 +1,10 @@
 #include <iostream>
 #include <cctype>
+#include <sstream>
+#include <unistd.h>
+#include <cmath>
+#include <thread>
+#include <chrono>
 #include "Interp4Rotate.hh"
 
 
@@ -63,9 +68,82 @@ bool Interp4Rotate::ExecCmd( AbstractScene      &rScn,
 			     AbstractComChannel &rComChann
 			   )
 {
-  /*
-   *  Tu trzeba napisać odpowiedni kod.
-   */
+  // Znajdź obiekt w scenie
+  AbstractMobileObj* pObj = rScn.FindMobileObj(sMobObjName);
+  if (!pObj) {
+    cerr << "!!! Błąd: Nie znaleziono obiektu: " << sMobObjName << endl;
+    return false;
+  }
+
+  cout << "  [Rotate] Obrót obiektu: " << sMobObjName << endl;
+  cout << "           Oś: " << _Axis << ", Prędkość: " << _AngSpeed_degS << " deg/s, Kąt: " << _Angle_deg << " deg" << endl;
+
+  // Pobierz obecną orientację
+  double currentRoll = pObj->GetAng_Roll_deg();
+  double currentPitch = pObj->GetAng_Pitch_deg();
+  double currentYaw = pObj->GetAng_Yaw_deg();
+  
+  // Ustal która oś jest obracana (konwersja na wielkie litery)
+  std::string axis = _Axis;
+  for (auto& c : axis) c = toupper(c);
+  
+  double startAngle = 0;
+  if (axis == "OX" || axis == "X") {
+    startAngle = currentRoll;
+    cout << "           Roll: " << startAngle << " → " << (startAngle + _Angle_deg) << " deg" << endl;
+  } else if (axis == "OY" || axis == "Y") {
+    startAngle = currentPitch;
+    cout << "           Pitch: " << startAngle << " → " << (startAngle + _Angle_deg) << " deg" << endl;
+  } else if (axis == "OZ" || axis == "Z") {
+    startAngle = currentYaw;
+    cout << "           Yaw: " << startAngle << " → " << (startAngle + _Angle_deg) << " deg" << endl;
+  } else {
+    cerr << "!!! Błąd: Nieprawidłowa oś: " << _Axis << " (użyj OX, OY lub OZ)" << endl;
+    return false;
+  }
+  
+  // Symulacja obrotu - oblicz czas i ilość kroków
+  // Używamy wartości bezwzględnej kąta do obliczenia czasu
+  double timeTotal_s = fabs(_Angle_deg) / _AngSpeed_degS;  // czas całkowity w sekundach
+  int steps = (int)(timeTotal_s * 10);  // 10 kroków na sekundę
+  if (steps < 1) steps = 1;
+  
+  double stepTime_ms = fabs(timeTotal_s * 1000.0) / steps;
+  
+  cout << "           Animacja: " << steps << " kroków po " << (int)stepTime_ms << "ms" << endl;
+  
+  // Animacja obrotu
+  for (int i = 1; i <= steps; i++) {
+    double t = (double)i / steps;  // parametr interpolacji [0, 1]
+    
+    double newAngle = startAngle + _Angle_deg * t;
+    
+    // Ustaw odpowiedni kąt w zależności od osi
+    if (axis == "OX" || axis == "X") {
+      pObj->SetAng_Roll_deg(newAngle);
+    } else if (axis == "OY" || axis == "Y") {
+      pObj->SetAng_Pitch_deg(newAngle);
+    } else if (axis == "OZ" || axis == "Z") {
+      pObj->SetAng_Yaw_deg(newAngle);
+    }
+    
+    // Wyślij UpdateObj do serwera
+    Vector3D pos = pObj->GetPositoin_m();
+    std::ostringstream cmd;
+    cmd << "UpdateObj Name=" << sMobObjName;
+    cmd << " Trans_m=(" << pos[0] << "," << pos[1] << "," << pos[2] << ")";
+    cmd << " RotXYZ_deg=(" << pObj->GetAng_Roll_deg() << "," 
+        << pObj->GetAng_Pitch_deg() << "," << pObj->GetAng_Yaw_deg() << ")\n";
+    
+    std::string cmdStr = cmd.str();
+    write(rComChann.GetSocket(), cmdStr.c_str(), cmdStr.length());
+    
+    // Czekaj między krokami
+    std::this_thread::sleep_for(std::chrono::milliseconds((int)stepTime_ms));
+  }
+  
+  cout << "  [Rotate] ✓ Obrót zakończony" << endl;
+  
   return true;
 }
 

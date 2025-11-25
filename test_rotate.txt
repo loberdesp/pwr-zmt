@@ -1,0 +1,13 @@
+Set Podstawa 0 0 0 0 0 0
+Pause 500
+
+Rotate Podstawa OZ 90 360
+Pause 500
+
+Rotate Podstawa OX 45 90
+Pause 500
+
+Rotate Podstawa OY 60 -45
+Pause 500
+
+Rotate Podstawa OZ 120 -360

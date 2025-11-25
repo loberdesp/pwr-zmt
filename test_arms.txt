@@ -1,0 +1,44 @@
+Set Podstawa 0 0 0 0 0 0
+Set Podstawa.Ramie1 0 0 0 0 0 0
+Set Podstawa.Ramie1.Ramie2 0 0 0 0 0 0
+Pause 1000
+
+Move Podstawa 0.3 3
+Pause 500
+
+Rotate Podstawa OZ 60 90
+Pause 500
+
+Move Podstawa.Ramie1 0.2 2
+Pause 500
+
+Rotate Podstawa.Ramie1 OZ 45 45
+Pause 500
+
+Move Podstawa.Ramie1.Ramie2 0.15 1.5
+Pause 500
+
+Rotate Podstawa.Ramie1.Ramie2 OY 30 60
+Pause 1000
+
+Move Podstawa.Ramie1.Ramie2 0.15 -1.5
+Pause 500
+
+Rotate Podstawa.Ramie1.Ramie2 OY 30 -60
+Pause 500
+
+Move Podstawa.Ramie1 0.2 -2
+Pause 500
+
+Rotate Podstawa.Ramie1 OZ 45 -45
+Pause 500
+
+Move Podstawa 0.3 -3
+Pause 500
+
+Rotate Podstawa OZ 60 -90
+Pause 1000
+
+Set Podstawa 0 0 0 0 0 0
+Set Podstawa.Ramie1 0 0 0 0 0 0
+Set Podstawa.Ramie1.Ramie2 0 0 0 0 0 0
