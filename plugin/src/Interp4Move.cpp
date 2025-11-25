@@ -2,6 +2,8 @@
 #include <sstream>
 #include <unistd.h>
 #include <cmath>
+#include <thread>
+#include <chrono>
 #include "Interp4Move.hh"
 
 
@@ -65,9 +67,76 @@ bool Interp4Move::ExecCmd( AbstractScene      &rScn,
 			   AbstractComChannel &rComChann
 			 )
 {
-  /*
-   *  Tu trzeba napisać odpowiedni kod.
-   */
+  // Znajdź obiekt w scenie
+  AbstractMobileObj* pObj = rScn.FindMobileObj(sMobObjName);
+  if (!pObj) {
+    cerr << "!!! Błąd: Nie znaleziono obiektu: " << sMobObjName << endl;
+    return false;
+  }
+
+  cout << "  [Move] Ruch obiektu: " << sMobObjName << endl;
+  cout << "         Prędkość: " << _Speed_mmS << " m/s, Dystans: " << _Distance_m << " m" << endl;
+
+  // Pobierz obecną pozycję i orientację
+  Vector3D currentPos = pObj->GetPositoin_m();
+  double yaw = pObj->GetAng_Yaw_deg();
+  
+  // Konwersja kąta Yaw na radiany
+  double yawRad = yaw * M_PI / 180.0;
+  
+  // Oblicz przesunięcie wzdłuż kierunku Yaw (obrót wokół osi Z)
+  // Yaw = 0° to kierunek +X, Yaw = 90° to kierunek +Y
+  // Dystans może być ujemny (ruch do tyłu)
+  double deltaX = _Distance_m * cos(yawRad);
+  double deltaY = _Distance_m * sin(yawRad);
+  
+  // Nowa pozycja
+  Vector3D newPos;
+  newPos[0] = currentPos[0] + deltaX;
+  newPos[1] = currentPos[1] + deltaY;
+  newPos[2] = currentPos[2];  // Z bez zmians
+  
+  cout << "         Start: (" << currentPos[0] << ", " << currentPos[1] << ", " << currentPos[2] << ")" << endl;
+  cout << "         Cel:   (" << newPos[0] << ", " << newPos[1] << ", " << newPos[2] << ")" << endl;
+  
+  // Symulacja ruchu - oblicz czas i ilość kroków
+  // Używamy wartości bezwzględnej dystansu do obliczenia czasu
+  double timeTotal_s = fabs(_Distance_m) / _Speed_mmS;  // czas całkowity w sekundach
+  int steps = (int)(timeTotal_s * 10);  // 10 kroków na sekundę
+  if (steps < 1) steps = 1;
+  
+  // Czas dla każdego kroku musi być zawsze dodatni
+  double stepTime_ms = timeTotal_s * 1000.0 / steps;
+  
+  cout << "         Animacja: " << steps << " kroków po " << (int)stepTime_ms << "ms" << endl;
+  
+  // Animacja ruchu
+  for (int i = 1; i <= steps; i++) {
+    double t = (double)i / steps;  // parametr interpolacji [0, 1]
+    
+    Vector3D interpolatedPos;
+    interpolatedPos[0] = currentPos[0] + deltaX * t;
+    interpolatedPos[1] = currentPos[1] + deltaY * t;
+    interpolatedPos[2] = currentPos[2];
+    
+    pObj->SetPosition_m(interpolatedPos);
+    
+    // Wyślij UpdateObj do serwera
+    std::ostringstream cmd;
+    cmd << "UpdateObj Name=" << sMobObjName;
+    cmd << " Trans_m=(" << interpolatedPos[0] << "," << interpolatedPos[1] << "," << interpolatedPos[2] << ")";
+    cmd << " RotXYZ_deg=(" << pObj->GetAng_Roll_deg() << "," 
+        << pObj->GetAng_Pitch_deg() << "," << pObj->GetAng_Yaw_deg() << ")\n";
+    
+    std::string cmdStr = cmd.str();
+    write(rComChann.GetSocket(), cmdStr.c_str(), cmdStr.length());
+    
+    // Czekaj między krokami
+    std::this_thread::sleep_for(std::chrono::milliseconds((int)stepTime_ms));
+  }
+  
+  cout << "  [Move] ✓ Ruch zakończony" << endl;
+  
   return true;
 }
 

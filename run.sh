@@ -5,4 +5,4 @@ mkdir config
 cp ../config/config.xml ../config/config.xsd config/
 cmake ..
 cmake --build .
-./cmds_interpreter ../test.txt
+./cmds_interpreter ../config/commands.txt

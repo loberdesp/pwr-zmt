@@ -1,0 +1,11 @@
+#define ROTATE_SPEED     30
+/*
+ *  Przykladowy zestaw polecen - uzywamy obiektow z XML
+ */
+  Set   Podstawa 5 0 0 0 0 45           // Przesuniecie podstawy i obrot o 45 stopni
+  Pause  2000                             /* Zawieszenie na 0.5 sek. */
+  Set   Podstawa.Ramie1 0 2 0 0 0 0     // Przesuniecie ramienia 1
+  Pause  2000
+  Set   Podstawa.Ramie1.Ramie2 0 3 0 0 0 90  // Przesuniecie ramienia 2 i obrot
+  Pause  2000
+  Set   Podstawa 0 0 0 0 0 0            // Powrot podstawy do pozycji startowej

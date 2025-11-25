@@ -1,0 +1,13 @@
+Set Podstawa 0 0 0 0 0 0
+Pause 500
+
+Move Podstawa 0.5 5
+Pause 500
+
+Move Podstawa 0.5 -3
+Pause 500
+
+Set Podstawa 0 0 0 0 0 90
+Pause 500
+
+Move Podstawa 0.3 4
