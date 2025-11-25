@@ -1,4 +1,6 @@
 #include <iostream>
+#include <thread>
+#include <chrono>
 #include "Interp4Pause.hh"
 
 
@@ -62,7 +64,13 @@ bool Interp4Pause::ExecCmd( AbstractScene      &rScn,
 			    AbstractComChannel &rComChann
 			  )
 {
-
+  cout << "  [Pause] Czekam " << _Duration_ms << " ms..." << endl;
+  
+  // Konwersja milisekund na czas i czekanie
+  std::this_thread::sleep_for(std::chrono::milliseconds((int)_Duration_ms));
+  
+  cout << "  [Pause] ✓ Zakończono oczekiwanie" << endl;
+  
   return true;
 }
 

@@ -1,4 +1,7 @@
 #include <iostream>
+#include <sstream>
+#include <unistd.h>
+#include <cmath>
 #include "Interp4Move.hh"
 
 

@@ -10,6 +10,8 @@
  */
 
 #include "CommandRegistry.hh"
+#include "AbstractScene.hh"
+#include "AbstractComChannel.hh"
 #include <string>
 #include <sstream>
 
@@ -24,8 +26,10 @@ public:
     /*!
      * \brief Konstruktor
      * \param[in] cmdRegistry - referencja do rejestru poleceń
+     * \param[in] scene - referencja do sceny z obiektami
+     * \param[in] comChannel - referencja do kanału komunikacyjnego
      */
-    CommandParser(CommandRegistry& cmdRegistry);
+    CommandParser(CommandRegistry& cmdRegistry, AbstractScene& scene, AbstractComChannel& comChannel);
     
     /*!
      * \brief Destruktor
@@ -42,7 +46,9 @@ public:
     bool ParseAndExecute(const std::string& fileContent);
 
 private:
-    CommandRegistry& _CmdRegistry;  ///< Referencja do rejestru poleceń
+    CommandRegistry& _CmdRegistry;      ///< Referencja do rejestru poleceń
+    AbstractScene& _Scene;              ///< Referencja do sceny z obiektami
+    AbstractComChannel& _ComChannel;    ///< Referencja do kanału komunikacyjnego
 };
 
 #endif

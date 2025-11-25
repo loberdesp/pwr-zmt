@@ -1,102 +1,41 @@
 #include <iostream>
-#include <cassert>
-#include "AbstractInterp4Command.hh"
-#include "preprocessor.hh"
-#include "CommandRegistry.hh"
-#include "CommandParser.hh"
-#include "Configuration.hh"
-#include "XMLReader.hh"
-#include <string>
+#include "ProgramInterpreter.hh"
 
 using namespace std;
 
-
+/*!
+ * \brief Główna funkcja programu
+ *
+ * Tworzy interpreter poleceń, wczytuje konfigurację XML
+ * i wykonuje program z pliku.
+ */
 int main(int argc, char *argv[])
 {
   cout << "\n=====================================" << endl;
   cout << "  Interpreter Poleceń - Etap 2" << endl;
   cout << "=====================================" << endl;
 
-  ///////////////// Wczytywanie konfiguracji XML /////////////////
-  
-  Configuration config;
-  
-  cout << "\n--- Wczytywanie konfiguracji XML ---" << endl;
-  if (!ReadXMLConfiguration("config/config.xml", config)) {
-      cerr << "!!! Błąd wczytywania konfiguracji XML" << endl;
-      return 1;
-  }
-  
-  // Wyświetl wczytaną konfigurację
-  config.Print();
-
-
-  //////////////////////////// Preprocessor test ////////////////////////////
+  // Sprawdź argumenty
   if (argc < 2) {
       cerr << "Usage: " << argv[0] << " <filename>" << endl;
       return 1;
   }
 
-  const char* filename = argv[1];
-  string fileContent = readFileAndPreprocess(filename);
-  if (fileContent.empty()) {
-      cerr << "Failed to read file: " << filename << endl;
+  // Utwórz interpreter
+  ProgramInterpreter interpreter;
+
+  // Wczytaj konfigurację XML
+  if (!interpreter.Read_XML_Config("config/config.xml")) {
+      cerr << "\n!!! Błąd wczytywania konfiguracji" << endl;
       return 1;
   }
-  cout << "\n--- Zawartość pliku po preprocessingu ---" << endl;
-  cout << fileContent << endl;
-  cout << "----------------------------------------\n" << endl;
 
-
-  ///////////////// Rejestracja wtyczek z konfiguracji XML /////////////////
-  
-  cout << "\n--- Ładowanie wtyczek z konfiguracji XML ---" << endl;
-  
-  CommandRegistry cmdRegistry;
-  
-  // Rejestracja wtyczek z pliku XML
-  for (const auto& libName : config.GetPluginLibraries()) {
-      string libPath = "./plugin/" + libName;
-      cmdRegistry.RegisterCmd(libPath.c_str());
-  }
-  
-  // Wyświetlenie zarejestrowanych poleceń
-  cmdRegistry.PrintRegisteredCommands();
-
-
-  ///////////////// Test rejestru poleceń /////////////////
-  
-  cout << "\n--- Test rejestru poleceń ---" << endl;
-  
-  // Lista poleceń do przetestowania
-  string testCommands[] = {"Move", "Set", "Rotate", "Pause"};
-  
-  for (const string& cmdName : testCommands) {
-      cout << "\n[TEST] Polecenie: " << cmdName << endl;
-      
-      AbstractInterp4Command* pCmd = cmdRegistry.CreateCmd(cmdName);
-      
-      if (pCmd) {
-          cout << "  Nazwa: " << pCmd->GetCmdName() << endl;
-          cout << "  Składnia: ";
-          pCmd->PrintSyntax();
-          
-          delete pCmd;
-      } else {
-          cerr << "  !!! Błąd tworzenia polecenia" << endl;
-      }
-  }
-
-
-  ///////////////// Parsowanie i wykonywanie poleceń z pliku /////////////////
-  
-  CommandParser parser(cmdRegistry);
-  
-  if (!parser.ParseAndExecute(fileContent)) {
-      cerr << "\n!!! Wystąpiły błędy podczas parsowania pliku" << endl;
+  // Wykonaj program
+  if (!interpreter.ExecProgram(argv[1])) {
+      cerr << "\n!!! Błąd wykonywania programu" << endl;
       return 1;
   }
-  
+
   cout << "\n=====================================" << endl;
   cout << "  Program zakończony pomyślnie!" << endl;
   cout << "=====================================" << endl;

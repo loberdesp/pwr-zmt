@@ -1,0 +1,60 @@
+Niniejsze oprogramowanie dostępne jest na licencji GNU-GPL.
+Zostało ono przygotowane do tego, aby współpracować z wersją Qt5 i Qt6.
+Jednak dołączony pakiet libQGLViewer poprawnie instaluje się tylko z Qt6.
+
+Ponadto wymagne jest zainstalowanie dodatkowych pakietów, o ile
+nie były wcześniej już zainstalowane.
+Należy do nich biblioteka:
+
+ -  SOIL (pakiety: libsoil-dev, libsoil1)
+oraz pakiet:
+  - libglu1-mesa-dev oraz pakiety, od których jest on zależny.
+   Wykorzystują program graficzny synaptic, po zaznaczeniu wspomnianego
+   pakietu, te pakiety, od których jest zależny, zostaną zaznaczone
+   automatycznie.
+
+Ponadto w niniejszym pakiecie wykorzystana jest biblioteka libQGLViewer.
+Dostępna jest ona w repozytorium:
+  https://github.com/GillesDebunne/libQGLViewer
+Dla wygody źródła biblioteki zostały umieszczone w niniejszym pakiecie
+(data pobranie 11.11.2024). Kompilacja biblioteki została zintegrowana
+z kompilacją źródeł samego serwera.
+
+Kompilację i konsolidację programu można zrealizować z wykorzystaniem
+programu cmake. Postępowanie jest standardowe właściwe dla tego
+narzędzia.
+
+Chcąc zmienić tło i podać inny plik można usunąć link symboliczny
+serwer_zrodla/background.png i w to miejsce umieścić własny plik w formacie
+PNG pod tą samą nazwą jak wcześniejszy link.
+
+Numer portu komunikacyjnego znajduje się w pliku: serwer_zrodla/inc/gsv-Const.h
+
+
+Zmiany:
+ wersja 1.1
+  - Numer portu, na którym nasłuchuje serwer można ustawić poprzez
+    wywołanie programu z opcją -p lub --port, np.
+        ./serwer_graficzny --port 6000
+
+  - Dodano nowe polecenia:
+     ShowLocalCrds  [yes|no]  - pokazanie lokalnego ukladu wspolrzednych bryl lub nie,
+     ShowBgTexture  [yes|no]  - pokazanie tekstury tla lub nie,
+     DrawMode [Fill|Line]     - tryb rysowania z wypelnieniem lub nie,
+     BgColor RGB=(rr,gg,bb)   - ustawienie koloru tła, gdzie rr, gg i bb to liczby z zakresu [0,255].
+
+ wersja 1.2 (2025.11.24)
+  - Dodano mozliwosc wstawiania nastepujacych obiektow geometrycznych:
+     * graniastoslup prawidlowy szesciokatny,
+     * ostroslup prawidlowy szesciokatny,
+     * sfera,
+     * półsfera.
+
+    Te obiekty geometryczne sa dodawane przez polecenie AddObj. Po nazwie nalezy
+    podac wlasciwy typ, np.
+      AddObj Name=Podstawa Type=Prism ...
+
+    Dopuszczalne nazwy typow to:
+      Cuboid (sześcian), Prism (graniastoslup), Pyramid (ostroslup),
+      Sphere (sfera), Hemisphere (półsfera).
+      

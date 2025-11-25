@@ -8,8 +8,8 @@ using namespace std;
 /*!
  * \brief Konstruktor
  */
-CommandParser::CommandParser(CommandRegistry& cmdRegistry)
-    : _CmdRegistry(cmdRegistry)
+CommandParser::CommandParser(CommandRegistry& cmdRegistry, AbstractScene& scene, AbstractComChannel& comChannel)
+    : _CmdRegistry(cmdRegistry), _Scene(scene), _ComChannel(comChannel)
 {
 }
 
@@ -65,6 +65,15 @@ bool CommandParser::ParseAndExecute(const std::string& fileContent)
         // Wyświetl parametry
         cout << "  Parametry: ";
         pCmd->PrintCmd();
+        
+        // Wykonaj polecenie na scenie
+        cout << "  Wykonywanie polecenia..." << endl;
+        if (!pCmd->ExecCmd(_Scene, objName.c_str(), _ComChannel)) {
+            cerr << "Linia " << lineNum << ": Błąd wykonywania polecenia" << endl;
+            allSuccess = false;
+        } else {
+            cout << "  ✓ Polecenie wykonane pomyślnie" << endl;
+        }
         
         // Zwolnij pamięć
         delete pCmd;

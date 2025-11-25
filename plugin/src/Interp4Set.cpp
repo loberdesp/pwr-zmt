@@ -1,4 +1,6 @@
 #include <iostream>
+#include <sstream>
+#include <unistd.h>
 #include "Interp4Set.hh"
 
 
@@ -61,9 +63,40 @@ bool Interp4Set::ExecCmd( AbstractScene      &rScn,
 			   AbstractComChannel &rComChann
 			 )
 {
-  /*
-   *  Tu trzeba napisać odpowiedni kod.
-   */
+  // Znajdź obiekt w scenie
+  AbstractMobileObj* pObj = rScn.FindMobileObj(sMobObjName);
+  if (!pObj) {
+    cerr << "!!! Błąd: Nie znaleziono obiektu: " << sMobObjName << endl;
+    return false;
+  }
+
+  cout << "  [Set] Ustawianie pozycji obiektu: " << sMobObjName << endl;
+  cout << "        Pozycja: (" << _PosX << ", " << _PosY << ", " << _PosZ << ")" << endl;
+  cout << "        Orientacja: Roll=" << _AngRoll << "° Pitch=" << _AngPitch << "° Yaw=" << _AngYaw << "°" << endl;
+
+  // Ustaw nową pozycję
+  Vector3D newPos;
+  newPos[0] = _PosX;
+  newPos[1] = _PosY;
+  newPos[2] = _PosZ;
+  pObj->SetPosition_m(newPos);
+
+  // Ustaw nowe kąty orientacji
+  pObj->SetAng_Roll_deg(_AngRoll);
+  pObj->SetAng_Pitch_deg(_AngPitch);
+  pObj->SetAng_Yaw_deg(_AngYaw);
+
+  // Wyślij UpdateObj do serwera graficznego
+  std::ostringstream cmd;
+  cmd << "UpdateObj Name=" << sMobObjName;
+  cmd << " Trans_m=(" << _PosX << "," << _PosY << "," << _PosZ << ")";
+  cmd << " RotXYZ_deg=(" << _AngRoll << "," << _AngPitch << "," << _AngYaw << ")\n";
+
+  std::string cmdStr = cmd.str();
+  write(rComChann.GetSocket(), cmdStr.c_str(), cmdStr.length());
+
+  cout << "  [Set] ✓ Obiekt zaktualizowany i wysłany do serwera" << endl;
+
   return true;
 }
 
