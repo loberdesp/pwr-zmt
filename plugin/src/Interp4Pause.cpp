@@ -62,9 +62,7 @@ bool Interp4Pause::ExecCmd( AbstractScene      &rScn,
 			    AbstractComChannel &rComChann
 			  )
 {
-  /*
-   *  Tu trzeba napisać odpowiedni kod.
-   */
+
   return true;
 }
 

@@ -43,16 +43,6 @@ public:
 
 private:
     CommandRegistry& _CmdRegistry;  ///< Referencja do rejestru poleceń
-    
-    /*!
-     * \brief Przetwarza pojedynczą linię polecenia
-     *
-     * \param[in] line - linia z poleceniem
-     * \param[in] lineNum - numer linii (do raportowania błędów)
-     * \retval true - polecenie wykonane pomyślnie
-     * \retval false - wystąpił błąd
-     */
-    bool ProcessCommandLine(const std::string& line, int lineNum);
 };
 
 #endif
