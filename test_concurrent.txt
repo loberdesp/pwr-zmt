@@ -1,0 +1,31 @@
+Set Podstawa 0 0 0 0 0 0
+Set Podstawa.Ramie1 0 0 0 0 0 0
+Set Podstawa.Ramie1.Ramie2 0 0 0 0 0 0
+Pause 500
+
+Begin_Parallel_Actions
+Move Podstawa 0.5 5
+Move Podstawa.Ramie1 0.3 3
+Move Podstawa.Ramie1.Ramie2 0.2 2
+End_Parallel_Actions
+
+Pause 1000
+
+Begin_Parallel_Actions
+Rotate Podstawa OZ 90 360
+Rotate Podstawa.Ramie1 OX 45 180
+Rotate Podstawa.Ramie1.Ramie2 OY 30 90
+End_Parallel_Actions
+
+Pause 1000
+
+Begin_Parallel_Actions
+Move Podstawa 0.5 -5
+Move Podstawa.Ramie1 0.3 -3
+Move Podstawa.Ramie1.Ramie2 0.2 -2
+End_Parallel_Actions
+
+Pause 500
+Set Podstawa 0 0 0 0 0 0
+Set Podstawa.Ramie1 0 0 0 0 0 0
+Set Podstawa.Ramie1.Ramie2 0 0 0 0 0 0

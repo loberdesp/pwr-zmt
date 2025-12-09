@@ -6,6 +6,7 @@
 #include "klient.hpp"
 #include <iostream>
 #include <sstream>
+#include <unistd.h>
 
 using namespace std;
 
@@ -115,6 +116,9 @@ bool ProgramInterpreter::ExecProgram(const char* FileName_Prog)
     if (!InitConnection()) {
         return false;
     }
+
+    std::string clear = "Clear\n";
+    write(_Chann2Serv.GetSocket(), clear.c_str(), clear.length());
     
     // Wyślij obiekty ze sceny do serwera
     SendObjectsToServer();
@@ -137,6 +141,8 @@ bool ProgramInterpreter::ExecProgram(const char* FileName_Prog)
         cerr << "\n!!! Wystąpiły błędy podczas parsowania pliku" << endl;
         return false;
     }
+    std::string close = "Close\n";
+    write(_Chann2Serv.GetSocket(), close.c_str(), close.length());
     
     return true;
 }

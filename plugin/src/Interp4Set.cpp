@@ -74,6 +74,9 @@ bool Interp4Set::ExecCmd( AbstractScene      &rScn,
   cout << "        Pozycja: (" << _PosX << ", " << _PosY << ", " << _PosZ << ")" << endl;
   cout << "        Orientacja: Roll=" << _AngRoll << "° Pitch=" << _AngPitch << "° Yaw=" << _AngYaw << "°" << endl;
 
+  // KROK 1: Zablokuj obiekt
+  pObj->LockAccess();
+  
   // Ustaw nową pozycję
   Vector3D newPos;
   newPos[0] = _PosX;
@@ -86,6 +89,9 @@ bool Interp4Set::ExecCmd( AbstractScene      &rScn,
   pObj->SetAng_Pitch_deg(_AngPitch);
   pObj->SetAng_Yaw_deg(_AngYaw);
 
+  // KROK 2: Zablokuj kanał komunikacyjny
+  rComChann.LockAccess();
+  
   // Wyślij UpdateObj do serwera graficznego
   std::ostringstream cmd;
   cmd << "UpdateObj Name=" << sMobObjName;
@@ -94,6 +100,10 @@ bool Interp4Set::ExecCmd( AbstractScene      &rScn,
 
   std::string cmdStr = cmd.str();
   write(rComChann.GetSocket(), cmdStr.c_str(), cmdStr.length());
+  
+  // KROK 3: Odblokuj obie zasoby
+  rComChann.UnlockAccess();
+  pObj->UnlockAccess();
 
   cout << "  [Set] ✓ Obiekt zaktualizowany i wysłany do serwera" << endl;
 

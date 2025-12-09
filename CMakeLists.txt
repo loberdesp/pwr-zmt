@@ -16,7 +16,6 @@ add_executable(${PROJECT_NAME}
     src/xmlinterp.cpp
     src/XMLReader.cpp
     src/klient.cpp
-    src/AbstractComChannel.cpp
     src/ProgramInterpreter.cpp
 )
 target_link_libraries(${PROJECT_NAME} xerces-c)

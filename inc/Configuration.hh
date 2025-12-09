@@ -12,6 +12,7 @@
 #include "Vector3D.hh"
 #include <vector>
 #include <string>
+#include <list>
 
 /*!
  * \brief Struktura opisująca pojedynczy obiekt prostopadłościenny (Cube)

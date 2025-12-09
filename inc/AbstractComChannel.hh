@@ -45,15 +45,7 @@
        * \brief Otwiera dostęp do gniazda.
        */
        virtual void UnlockAccess() = 0;
-       /*!
-        * \brief Udostępnia mutex w trybie modyfikacji.
-        *
-        *  Udostępnia mutex w trybie modyfikacji.
-        *  Jest to przydatne, gdy planowany jest inny typ zamknięcie,
-        *  np. poprzez klasę std::lock_gaurd, która daje możliwość
-        *  bezpieczniejszego zamknięcia.
-        */
-       virtual std::mutex &UseGuard();
+
     };
 
 

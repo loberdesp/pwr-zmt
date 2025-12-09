@@ -40,9 +40,6 @@ Interp4Pause::Interp4Pause(): _Duration_ms(0)
  */
 void Interp4Pause::PrintCmd() const
 {
-  /*
-   *  Tu trzeba napisać odpowiednio zmodyfikować kod poniżej.
-   */
   cout << GetCmdName() << " " << _Duration_ms << endl;
 }
 

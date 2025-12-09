@@ -1,0 +1,18 @@
+Set Podstawa 0 0 0 0 0 0
+Pause 500
+
+Begin_Parallel_Actions
+Move Podstawa 0.3 3
+Rotate Podstawa.Ramie1 OZ 30 90
+Move Podstawa.Ramie1.Ramie2 0.2 2
+End_Parallel_Actions
+
+Pause 1000
+
+Begin_Parallel_Actions
+Rotate Podstawa OX 45 180
+Move Podstawa.Ramie1 0.4 2
+End_Parallel_Actions
+
+Pause 500
+Set Podstawa 0 0 0 0 0 0

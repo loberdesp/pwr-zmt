@@ -43,9 +43,6 @@ Interp4Move::Interp4Move(): _Speed_mmS(0), _Distance_m(0)
  */
 void Interp4Move::PrintCmd() const
 {
-  /*
-   *  Tu trzeba napisać odpowiednio zmodyfikować kod poniżej.
-   */
   cout << GetCmdName() << " " << _Speed_mmS  << " " << _Distance_m << endl;
 }
 
@@ -112,6 +109,7 @@ bool Interp4Move::ExecCmd( AbstractScene      &rScn,
   
   // Animacja ruchu
   for (int i = 1; i <= steps; i++) {
+    pObj->LockAccess();
     double t = (double)i / steps;  // parametr interpolacji [0, 1]
     
     Vector3D interpolatedPos;
@@ -120,6 +118,8 @@ bool Interp4Move::ExecCmd( AbstractScene      &rScn,
     interpolatedPos[2] = currentPos[2];
     
     pObj->SetPosition_m(interpolatedPos);
+
+    rComChann.LockAccess();
     
     // Wyślij UpdateObj do serwera
     std::ostringstream cmd;
@@ -130,6 +130,9 @@ bool Interp4Move::ExecCmd( AbstractScene      &rScn,
     
     std::string cmdStr = cmd.str();
     write(rComChann.GetSocket(), cmdStr.c_str(), cmdStr.length());
+
+    rComChann.UnlockAccess();
+    pObj->UnlockAccess();
     
     // Czekaj między krokami
     std::this_thread::sleep_for(std::chrono::milliseconds((int)stepTime_ms));

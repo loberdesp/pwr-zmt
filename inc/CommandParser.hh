@@ -46,6 +46,17 @@ public:
     bool ParseAndExecute(const std::string& fileContent);
 
 private:
+    /*!
+     * \brief Wykonuje pojedyncze polecenie
+     *
+     * \param[in] cmdName - nazwa polecenia
+     * \param[in] objName - nazwa obiektu (pusta dla Pause)
+     * \param[in] params - strumień z parametrami polecenia
+     * \retval true - polecenie wykonane pomyślnie
+     * \retval false - wystąpił błąd
+     */
+    bool ExecuteSingleCommand(const std::string& cmdName, const std::string& objName, std::istream& params);
+
     CommandRegistry& _CmdRegistry;      ///< Referencja do rejestru poleceń
     AbstractScene& _Scene;              ///< Referencja do sceny z obiektami
     AbstractComChannel& _ComChannel;    ///< Referencja do kanału komunikacyjnego

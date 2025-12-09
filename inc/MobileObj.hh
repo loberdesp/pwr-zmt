@@ -4,6 +4,7 @@
 #include "AbstractMobileObj.hh"
 #include "Configuration.hh"
 #include <string>
+#include <mutex>
 
 /*!
  * \file
@@ -25,6 +26,7 @@ class MobileObj : public AbstractMobileObj {
   double _roll_deg;         ///< Kąt Roll w stopniach (obrót wokół OX)
   double _pitch_deg;        ///< Kąt Pitch w stopniach (obrót wokół OY)
   double _yaw_deg;          ///< Kąt Yaw w stopniach (obrót wokół OZ)
+  std::mutex _access_mutex;
 
 public:
   /*!
@@ -98,6 +100,14 @@ public:
   const std::string& GetName() const override {
     return _name;
   }
+
+      void LockAccess() override {
+        _access_mutex.lock();
+    }
+    
+    void UnlockAccess() override {
+        _access_mutex.unlock();
+    }
 };
 
 #endif

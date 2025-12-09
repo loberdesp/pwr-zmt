@@ -44,9 +44,6 @@ Interp4Rotate::Interp4Rotate(): _AngSpeed_degS(0), _Angle_deg(0), _Axis("OZ")
  */
 void Interp4Rotate::PrintCmd() const
 {
-  /*
-   *  Tu trzeba napisać odpowiednio zmodyfikować kod poniżej.
-   */
   cout << GetCmdName() << " " << _Axis << " " << _AngSpeed_degS  << " " << _Angle_deg << endl;
 }
 
@@ -114,6 +111,9 @@ bool Interp4Rotate::ExecCmd( AbstractScene      &rScn,
   
   // Animacja obrotu
   for (int i = 1; i <= steps; i++) {
+    // KROK 1: Zablokuj obiekt
+    pObj->LockAccess();
+    
     double t = (double)i / steps;  // parametr interpolacji [0, 1]
     
     double newAngle = startAngle + _Angle_deg * t;
@@ -127,6 +127,9 @@ bool Interp4Rotate::ExecCmd( AbstractScene      &rScn,
       pObj->SetAng_Yaw_deg(newAngle);
     }
     
+    // KROK 2: Zablokuj kanał komunikacyjny
+    rComChann.LockAccess();
+    
     // Wyślij UpdateObj do serwera
     Vector3D pos = pObj->GetPositoin_m();
     std::ostringstream cmd;
@@ -138,11 +141,15 @@ bool Interp4Rotate::ExecCmd( AbstractScene      &rScn,
     std::string cmdStr = cmd.str();
     write(rComChann.GetSocket(), cmdStr.c_str(), cmdStr.length());
     
+    // KROK 3: Odblokuj obie zasoby
+    rComChann.UnlockAccess();
+    pObj->UnlockAccess();
+    
     // Czekaj między krokami
     std::this_thread::sleep_for(std::chrono::milliseconds((int)stepTime_ms));
   }
   
-  cout << "  [Rotate] ✓ Obrót zakończony" << endl;
+  cout << "  [Rotate] Obrót zakończony" << endl;
   
   return true;
 }

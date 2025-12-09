@@ -21,6 +21,7 @@
 class ComChannel : public AbstractComChannel {
   int _Socket;           ///< Deskryptor gniazda sieciowego
   mutable std::mutex _Mutex;  ///< Mutex do synchronizacji dostępu
+  
 
 public:
   /*!
@@ -69,13 +70,7 @@ public:
     _Mutex.unlock();
   }
 
-  /*!
-   * \brief Udostępnia mutex
-   * \return Referencja do mutex
-   */
-  std::mutex& UseGuard() override {
-    return _Mutex;
-  }
+
 };
 
 #endif
